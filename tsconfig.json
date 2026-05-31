@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+
+		"lib": ["es2025", "ESNext.Collection", "ESNext.Temporal", "DOM"],
+		"types": ["node"],
+		"module": "nodenext",
+		"target": "es2025"
+	},
+	"$schema": "https://www.schemastore.org/tsconfig",
+	"display": "Node 26 strictest",
+	"_version": "26.0.0"
+}
