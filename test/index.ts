@@ -1,3 +1,4 @@
+// import fs from 'node:fs';
 import { it, describe } from 'node:test';
 import assert from 'node:assert';
 import { DirectedGraph } from 'graphology';
@@ -5,17 +6,19 @@ import { findDependents } from '../src/index.ts';
 
 const graph = new DirectedGraph();
 ['A', 'B', 'C', 'D', 'D1', 'D2', 'D3', 'E', 'F', 'G'].map((node) => graph.addNode(node));
-graph.addDirectedEdgeWithKey('B->A', 'B', 'A', { from: 'B', to: 'A' });
-graph.addDirectedEdgeWithKey('C->B', 'C', 'B', { from: 'C', to: 'B' });
-graph.addDirectedEdgeWithKey('E->B', 'E', 'B', { from: 'E', to: 'B' });
-graph.addDirectedEdgeWithKey('F->B', 'F', 'B', { from: 'F', to: 'B' });
-graph.addDirectedEdgeWithKey('C->G', 'C', 'G', { from: 'C', to: 'G' });
-graph.addDirectedEdgeWithKey('D->C', 'D', 'C', { from: 'D', to: 'C' });
-graph.addDirectedEdgeWithKey('D1->D', 'D1', 'D', { from: 'D1', to: 'D' });
-graph.addDirectedEdgeWithKey('D2->D1', 'D2', 'D1', { from: 'D2', to: 'D1' });
-graph.addDirectedEdgeWithKey('D3->D2', 'D3', 'D2', { from: 'D3', to: 'D2' });
-graph.addDirectedEdgeWithKey('D->F', 'D', 'F', { from: 'D', to: 'F' });
-graph.addDirectedEdgeWithKey('G->A', 'G', 'A', { from: 'G', to: 'A' });
+graph.addDirectedEdgeWithKey('B->A', 'B', 'A');
+graph.addDirectedEdgeWithKey('C->B', 'C', 'B');
+graph.addDirectedEdgeWithKey('E->B', 'E', 'B');
+graph.addDirectedEdgeWithKey('F->B', 'F', 'B');
+graph.addDirectedEdgeWithKey('C->G', 'C', 'G');
+graph.addDirectedEdgeWithKey('D->C', 'D', 'C');
+graph.addDirectedEdgeWithKey('D1->D', 'D1', 'D');
+graph.addDirectedEdgeWithKey('D2->D1', 'D2', 'D1');
+graph.addDirectedEdgeWithKey('D3->D2', 'D3', 'D2');
+graph.addDirectedEdgeWithKey('D->F', 'D', 'F');
+graph.addDirectedEdgeWithKey('G->A', 'G', 'A');
+
+// fs.writeFileSync('output.json', JSON.stringify(graph.toJSON(), null, 2));
 
 describe('graph', () => {
 	it('should do whatever', () => {
