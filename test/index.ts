@@ -22,7 +22,7 @@ graph.addDirectedEdgeWithKey('G->A', 'G', 'A');
 
 describe('graph', () => {
 	it('should do whatever', () => {
-		findDependents(graph, 'A');
+		findDependents(graph, 'A', true);
 
 		/**
 		 * Logs as follows
